@@ -29,5 +29,57 @@ paths:
             application/json:
               schema:
                 type: string
+      postMovieOption:
+        summary: selects the movie option that is desired
+        requestBody:
+          required: true
+          content: 
+            application/json:
+              schema:
+                type: string
+        responses:
+          'Is this Your Movie Type?':
+            description: asks whether or not the selected movie viewing type is what is actually selected
+            content: 
+              application/json:
+                schema: 
+                  type: string
+                    answer:
+                      type: boolean
+           'Do You Wish to Continue to Movie Time Options?':
+             description: asks whether or not the user wishes to select their movie times now that movie option has been selected
+             content:
+               application/json:
+                 schema:
+                   type: string
+                     answer:
+                       type: boolean
+      deleteMovieOption:
+        summary: deletes the movie viewing option
+        responses:
+          'Delete Without Saving':
+            description: deletes the movie viewing option without saving it to the user's profile
+            content:
+              application/json:
+                schema:
+                  type: string
+                    answer: 
+                      type: boolean
+          'Delete With Saving':
+            description: deletes the movie viewing option from the cart but saves it to user's profile
+            content: 
+              application/json:
+                schema: 
+                  type: string
+                    answer: 
+                      type: boolean
+          'Do Not Delete':  
+            description: does not delete the movie viewing option from the cart
+            content: 
+              application/json:
+                schema:
+                  type: string
+                    answer:
+                      type: boolean
           
 
