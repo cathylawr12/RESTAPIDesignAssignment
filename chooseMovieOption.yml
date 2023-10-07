@@ -1,0 +1,33 @@
+info:
+  title: Movie Option Choice
+  summary: Select how the movie to to be viewed given various options of viewing.
+
+servers:
+  - url: http://madeupmovietheater.com/select
+  description: Website where movie ticket is bought
+
+paths:
+  /users:
+    getMovieOption:
+      summary: returns the options of movie viewing for the selected movie
+      responses:
+        '2D':
+          description: a movie viewing in traditional two-dimensional; movie is seen from one angle only
+          content: 
+            application/json:
+              schema: 
+                type: string
+        '3D':
+          description: a movie viewing in three-dimensions; provides the additional angle of depth
+          content:
+            application/json:
+              schema:
+                type: string
+        'IMAX':
+          description: a movie viewing with a massive screen that provides up to 40% more imagery
+          content:
+            application/json:
+              schema:
+                type: string
+          
+
